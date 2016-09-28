@@ -1,0 +1,14 @@
+<h1>Unpakt</h1>
+<h3>Never pack again!</h3>
+<ul>
+  <li><%= link_to "View Closets", "" %></li>
+  <li><%= link_to "List Your Clothes", "" %></li>
+  <li><%= link_to "About Unpackt", "" %></li>
+  <li><%= link_to "How it works", "" %></li>
+  <li><%= link_to "Contact", "" %></li>
+  <% if user_signed_in? %>
+    <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
+  <% else %>
+    <li><%= link_to('Login', new_user_session_path)  %></li>
+</ul>
+<% end %>
