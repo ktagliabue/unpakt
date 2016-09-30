@@ -1,1 +1,7 @@
-closet-index page
+<%= form_for User.first, url: user_session_path, html: { multipart: true } do |form| %>
+  <%= form.file_field :avatar %>
+<% end %>
+
+<%= image_tag User.first.avatar.url %>
+<%= image_tag User.first.avatar.url(:medium) %>
+<%= image_tag User.first.avatar.url(:thumb) %>
