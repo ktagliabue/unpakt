@@ -9,24 +9,29 @@
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">Start Bootstrap</a>
+                <a class="navbar-brand page-scroll" href="#page-top">Unpackt</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a class="page-scroll" href="#about">About</a>
+                        <a class="page-scroll" href="#list">List</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#services">Services</a>
+                        <a class="page-scroll" href="#services">How it works</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#portfolio">Portfolio</a>
+                        <a class="page-scroll" href="#trending">What's hot</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#contact">Contact</a>
                     </li>
+                    <% if user_signed_in? %>
+                      <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
+                      <% else %>
+                      <li><%= link_to('Login', new_user_session_path) %></li>
+                    <% end %>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -40,12 +45,12 @@
                 <h1 id="homeHeading">Unpackt</h1>
                 <hr>
                 <p>Don't trip. We'll pack for you.</p>
-                <a href="#about" class="btn btn-primary btn-xl page-scroll">Get Started</a>
+                <%= link_to('Get Started', new_user_session_path, class: "btn btn-primary btn-xl page-scroll") %>
             </div>
         </div>
     </header>
 
-    <section class="bg-primary" id="about">
+    <section class="bg-primary" id="list">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
@@ -101,7 +106,7 @@
         </div>
     </section>
 
-    <section class="no-padding" id="portfolio">
+    <section class="no-padding" id="trending">
         <div class="container-fluid">
             <div class="row no-gutter popup-gallery">
                 <div class="col-lg-4 col-sm-6 ar-4x3">
