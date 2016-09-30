@@ -1,5 +1,5 @@
-<body id="plant-bg">
-  <div id="login-form-wrapper"
+ <body id="plant-bg">
+  <div id="login-form-wrapper">
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= devise_error_messages! %>
     <fieldset>
@@ -25,7 +25,7 @@
       <span><i class="fa fa-lock"></i></span>
   </div>
 
-    <% if devise_mapping.rememberable? -%>
+  <!--<% if devise_mapping.rememberable? -%>
     <div class="input">
       <div class="field">
         <%= f.check_box :remember_me %>
@@ -34,9 +34,9 @@
       <br>
       <%= render "devise/shared/links" %>
     </div>
-    <% end -%>
+    <% end -%>    -->
     <div class="actions">
-      <%= f.button :submit, class: "submit" do %>
+      <%= button_tag type: 'submit', class: "submit" do %>
         <i class="fa fa-long-arrow-right"></i>
       <% end %>
     </div>
